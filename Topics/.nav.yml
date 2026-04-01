@@ -1,0 +1,8 @@
+nav:
+  - index.md
+  - Foundations
+  - Prompting
+  - API & Tools: API-Tools
+  - Agents & MCP: Agents-MCP
+  - Claude Code
+  - Ethics & Safety: Ethics-Safety

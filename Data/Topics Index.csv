@@ -1,0 +1,54 @@
+﻿Topic,Aggiornato,Categoria,Corsi,Date,Place,Stato
+Prompt Caching,"April 1, 2026 9:17 AM",API & Tools,"AI Fluency, Building with the Claude API, Claude 101",,,Completo
+Progetti e Artifacts,"March 31, 2026 4:11 PM",Foundations,"Claude 101, Intro to Claude Cowork",,,Bozza
+Contextual Retrieval ed Enterprise Search,"April 1, 2026 2:05 PM",Agents & MCP,"AI Fluency, Building with the Claude API, Claude 101",,,Completo
+System prompt e separazione dei ruoli,"April 1, 2026 12:41 AM",Prompting,Claude 101,,,Da Approfondire
+Anatomia di un prompt efficace,"April 1, 2026 12:40 AM",Prompting,"AI Fluency, Claude 101",,,Da Approfondire
+Responsible use e bias,"April 1, 2026 2:20 PM",Ethics & Safety,"AI Fluency, Claude 101, Intro to Claude Cowork",,,Completo
+Sampling e notifiche MCP,"April 1, 2026 9:32 AM",Agents & MCP,"Intro to MCP, MCP Advanced Topics",,,Completo
+Gestione errori e retry,"April 1, 2026 9:15 AM",API & Tools,"Building with the Claude API, Claude 101, Claude Code in Action, Intro to MCP",,,Completo
+Modelli Claude: famiglie e differenze,"April 1, 2026 12:33 AM",Foundations,"AI Fluency, Claude 101, Claude Code in Action",,,Da Approfondire
+Model Context Protocol: architettura,"April 1, 2026 9:29 AM",Agents & MCP,"AI Fluency, Building with the Claude API, Claude 101, Intro to Claude Cowork, Intro to MCP, MCP Advanced Topics",,,Da Approfondire
+Context Window e Token,"April 1, 2026 9:20 AM",Foundations,"AI Fluency, Claude 101, Intro to Agent Skills, Intro to Claude Cowork",,,Da Approfondire
+Tool Use (Function Calling),"April 1, 2026 9:14 AM",API & Tools,Building with the Claude API,,,Completo
+Chain-of-thought e ragionamento esplicito,"April 1, 2026 12:43 AM",Prompting,"AI Fluency, Building with the Claude API, Claude 101",,,Completo
+Claude su Amazon Bedrock,"March 31, 2026 9:48 AM",Cloud & Deploy,,,,Bozza
+Streaming delle risposte,"April 1, 2026 9:13 AM",API & Tools,"Building with the Claude API, Claude 101",,,Completo
+Context management nel codice,"April 1, 2026 2:09 PM",Claude Code,"Building with the Claude API, Claude 101, Claude Code in Action, Intro to Subagents",,,Completo
+Subagents e task delegation,"April 1, 2026 9:23 AM",Agents & MCP,"AI Fluency, Claude 101, Intro to Agent Skills, Intro to Claude Cowork, Intro to Subagents",,,Da Approfondire
+Claude su Google Vertex AI,"March 31, 2026 9:48 AM",Cloud & Deploy,,,,Bozza
+Batch API,"April 1, 2026 9:14 AM",API & Tools,Claude 101,,,Completo
+Agentic loop e autonomia,"April 1, 2026 9:21 AM",Agents & MCP,"AI Fluency, Building with the Claude API, Claude 101, Claude Code in Action, Intro to Claude Cowork, Intro to MCP, Intro to Subagents",,,Da Approfondire
+Come funzionano i Large Language Model,"April 1, 2026 12:25 AM",Foundations,"AI Fluency, Claude 101",,,Da Approfondire
+Temperature e parametri di generazione,"March 31, 2026 10:27 AM",Foundations,AI Fluency,,,Bozza
+Architettura di Claude Code,"April 1, 2026 2:08 PM",Claude Code,"AI Fluency, Building with the Claude API, Claude 101, Claude Code in Action, Intro to Agent Skills, Intro to Claude Cowork, Intro to MCP, Intro to Subagents, MCP Advanced Topics",,,Da Approfondire
+Few-shot prompting,"April 1, 2026 12:42 AM",Prompting,"AI Fluency, Building with the Claude API, Claude 101",,,Da Approfondire
+Build di server MCP in Python,"April 1, 2026 9:31 AM",Agents & MCP,"Claude 101, Intro to MCP, MCP Advanced Topics",,,Da Approfondire
+RLHF e Constitutional AI,"March 31, 2026 10:29 AM",Ethics & Safety,AI Fluency,,,Completo
+"Resources, Tools e Prompts in MCP","April 1, 2026 9:32 AM",Agents & MCP,"Claude 101, Intro to MCP",,,Completo
+Prompt per task strutturati,"April 1, 2026 12:44 AM",Prompting,"AI Fluency, Building with the Claude API, Claude 101",,,Completo
+Sicurezza nei sistemi agentici,"April 1, 2026 12:11 AM",Ethics & Safety,"Claude Code in Action, Intro to Agent Skills, Intro to Claude Cowork, Intro to MCP, Intro to Subagents",,,Bozza
+Integrazione MCP + GitHub,"April 1, 2026 2:10 PM",Claude Code,"Claude 101, Claude Code in Action",,,Da Approfondire
+Memory e stato negli agenti,"April 1, 2026 9:21 AM",Agents & MCP,"Claude 101, Intro to Claude Cowork, Intro to Subagents",,,Da Approfondire
+Messages API: struttura e parametri,"April 1, 2026 9:12 AM",API & Tools,"AI Fluency, Building with the Claude API, Claude 101",,,Da Approfondire
+Agent Skills in Claude Code,"March 31, 2026 8:27 PM",Agents & MCP,"Claude 101, Intro to Agent Skills, Intro to Claude Cowork, Intro to MCP",,,Bozza
+Multi-tool use e flussi complessi,"April 1, 2026 2:10 PM",Claude Code,"Claude 101, Intro to Claude Cowork",,,Completo
+Framework 4D e AI Fluency,"April 1, 2026 12:36 AM",Foundations,AI Fluency,,,Completo
+Allucinazioni e verifica dei fatti,"March 31, 2026 2:19 PM",Foundations,AI Fluency,,,Bozza
+Gestione del ciclo di vita dei modelli,"April 1, 2026 12:36 AM",Foundations,AI Fluency,,,Completo
+Computer Use e visione computerizzata,"March 31, 2026 2:35 PM",Agents & MCP,Intro to Claude Cowork,,,Completo
+Plugin di Cowork: architettura e personalizzazione,"April 1, 2026 2:06 PM",Agents & MCP,Intro to Claude Cowork,,,Completo
+Compounding Context e memoria persistente in Cowork,"April 1, 2026 2:06 PM",Agents & MCP,"Intro to Agent Skills, Intro to Claude Cowork",,,Completo
+Evaluation-driven development (Evals),"April 1, 2026 2:20 PM",API & Tools,"Building with the Claude API, Intro to Agent Skills",,,Completo
+Pattern di workflow agentici,"March 31, 2026 7:08 PM",Agents & MCP,Building with the Claude API,,,Completo
+Ciclo di vita della connessione MCP e handshake,"April 1, 2026 9:33 AM",Agents & MCP,"Intro to MCP, MCP Advanced Topics",,,Completo
+MCP Inspector e debugging,"April 1, 2026 2:03 PM",Agents & MCP,Intro to MCP,,,Completo
+Sicurezza avanzata in MCP,"April 1, 2026 2:03 PM",Ethics & Safety,"Intro to MCP, MCP Advanced Topics",,,Completo
+StreamableHTTP: il trasporto moderno per MCP remoto,"March 31, 2026 8:15 PM",Agents & MCP,MCP Advanced Topics,,,Completo
+Scalabilità e stato nei sistemi MCP,"March 31, 2026 8:15 PM",Agents & MCP,MCP Advanced Topics,,,Completo
+Anatomia di una Skill: http://SKILL.md e frontmatter,"April 1, 2026 2:12 PM",Claude Code,"Claude Code in Action, Intro to Agent Skills, Intro to Subagents",,,Da Approfondire
+Skills tramite API e ambienti cloud,"March 31, 2026 8:35 PM",API & Tools,Intro to Agent Skills,,,Completo
+Claude Agent SDK: integrazione programmatica dei subagenti,"April 1, 2026 9:24 AM",API & Tools,"Claude Code in Action, Intro to Subagents",,,Completo
+Hooks nel ciclo di vita degli agenti,"April 1, 2026 9:25 AM",Agents & MCP,"Claude Code in Action, Intro to Subagents",,,Completo
+Setup e installazione di Claude Code,"April 1, 2026 2:12 PM",Claude Code,Claude Code in Action,,,Completo
+Sicurezza avanzata in Claude Code,"April 1, 2026 2:14 PM",Ethics & Safety,Claude Code in Action,,,Completo
