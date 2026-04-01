@@ -24,6 +24,11 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          # If GH_PAGES_TOKEN is provided, the action can attempt to enable
+          # Pages automatically for repositories where it hasn't been set up yet.
+          token: ${{ secrets.GH_PAGES_TOKEN != '' && secrets.GH_PAGES_TOKEN || github.token }}
+          enablement: ${{ secrets.GH_PAGES_TOKEN != '' }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
