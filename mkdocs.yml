@@ -1,16 +1,8 @@
 site_name: Anthropic Academy
 site_description: Topic-first knowledge base on Claude, agent systems, MCP, prompting, API workflows, and Claude Code.
-docs_dir: .
+docs_dir: docs
 site_dir: site
 use_directory_urls: true
-
-exclude_docs: |
-  README.md
-  requirements.txt
-  mkdocs.yml
-  site/
-  .github/
-  .gitignore
 
 theme:
   name: material

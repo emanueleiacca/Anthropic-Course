@@ -39,6 +39,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Prepare docs directory
+        run: python scripts/prepare_mkdocs.py
+
       - name: Build site
         run: mkdocs build --strict
 
