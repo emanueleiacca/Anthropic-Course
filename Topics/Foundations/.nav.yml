@@ -1,0 +1,10 @@
+nav:
+  - index.md
+  - Come funzionano i Large Language Model.md
+  - Modelli Claude - famiglie e differenze.md
+  - Temperature e parametri di generazione.md
+  - Context Window e Token.md
+  - Framework 4D e AI Fluency.md
+  - Allucinazioni e verifica dei fatti.md
+  - Gestione del ciclo di vita dei modelli.md
+  - Progetti e Artifacts.md

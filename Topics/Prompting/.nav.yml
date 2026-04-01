@@ -1,0 +1,7 @@
+nav:
+  - index.md
+  - Anatomia di un prompt efficace.md
+  - System prompt e separazione dei ruoli.md
+  - Few-shot prompting.md
+  - Prompt per task strutturati.md
+  - Chain-of-thought e ragionamento esplicito.md

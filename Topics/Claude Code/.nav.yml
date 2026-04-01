@@ -1,0 +1,8 @@
+nav:
+  - index.md
+  - Architettura di Claude Code.md
+  - Setup e installazione di Claude Code.md
+  - Context management nel codice.md
+  - Multi-tool use e flussi complessi.md
+  - Integrazione MCP + GitHub.md
+  - Anatomia di una Skill - SKILL e frontmatter.md

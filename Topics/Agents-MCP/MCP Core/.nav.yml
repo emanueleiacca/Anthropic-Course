@@ -1,0 +1,10 @@
+nav:
+  - index.md
+  - Model Context Protocol - architettura.md
+  - Resources, Tools e Prompts in MCP.md
+  - Ciclo di vita della connessione MCP.md
+  - Sampling e notifiche MCP.md
+  - StreamableHTTP - trasporto MCP remoto.md
+  - Scalabilità e stato nei sistemi MCP.md
+  - Build di server MCP in Python.md
+  - MCP Inspector e debugging.md

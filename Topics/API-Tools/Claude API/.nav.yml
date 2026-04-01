@@ -1,0 +1,8 @@
+nav:
+  - index.md
+  - Messages API - struttura e parametri.md
+  - Streaming delle risposte.md
+  - Batch API.md
+  - Prompt Caching.md
+  - Gestione errori e retry.md
+  - Tool Use (Function Calling).md

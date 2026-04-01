@@ -1,0 +1,8 @@
+nav:
+  - index.md
+  - Agentic loop e autonomia.md
+  - Subagents e task delegation.md
+  - Memory e stato negli agenti.md
+  - Pattern di workflow agentici.md
+  - Hooks nel ciclo di vita degli agenti.md
+  - Agent Skills in Claude Code.md
