@@ -306,3 +306,152 @@ Non rilasciare feature senza sapere quanto bene funzionano.
 - Prompt design: `Topics/Prompting/`
 - Claude Code: `Topics/Claude Code/`
 - Sicurezza: `Topics/Ethics-Safety/`
+
+---
+
+## Dominio: Blender + Stampa 3D
+
+L'utente usa Blender principalmente per **preparare modelli per la stampa 3D**.
+Il workflow passa da Blender → slicer (es. PrusaSlicer, Cura) → stampante.
+MCP usato: `blender-mcp` (esegue Python in Blender via socket TCP).
+
+### Requisiti fondamentali per un modello stampabile
+
+| Requisito | Perché | Come verificare in Blender |
+|-----------|--------|---------------------------|
+| Mesh manifold (watertight) | Nessun buco, ogni edge condiviso da esattamente 2 facce | `3D Print Toolbox` addon o `bpy.ops.mesh.print3d_check_all()` |
+| Scale in mm reali | Blender usa unità arbitrarie | `bpy.context.scene.unit_settings` → `LENGTH`, `scale_length=0.001` |
+| No geometria sovrapposta | I slicer si confondono con self-intersections | Mesh Analysis overlay in Edit Mode |
+| Spessore minimo pareti | Dipende da materiale: FDM ~1.2mm, Resin ~0.5mm | 3D Print Toolbox → Wall Thickness |
+| Normali coerenti (tutte outward) | Il slicer usa le normali per capire "dentro/fuori" | Overlay → Face Orientation (blu=ok, rosso=invertita) |
+| No N-gon problematici | Alcuni slicer gestiscono male facce con >4 vertici | Triangola prima dell'export |
+
+### Unità di misura — Setup corretto
+
+```python
+# Imposta scena in millimetri (standard stampa 3D)
+import bpy
+scene = bpy.context.scene
+scene.unit_settings.system = 'METRIC'
+scene.unit_settings.length_unit = 'MILLIMETERS'
+scene.unit_settings.scale_length = 0.001
+```
+
+### Export STL — Pattern standard
+
+```python
+import bpy
+
+# Seleziona oggetto e forza triangolazione
+obj = bpy.context.active_object
+bpy.ops.object.select_all(action='DESELECT')
+obj.select_set(True)
+
+# Export STL (unità: mm, applica trasformazioni)
+bpy.ops.wm.stl_export(
+    filepath="/percorso/output.stl",
+    ascii_format=False,          # binary = file più piccolo
+    apply_modifiers=True,        # applica tutti i modificatori
+    export_selected_objects=True,
+    global_scale=1000.0,         # Blender units → mm (se scale_length=0.001)
+    use_scene_unit=True,
+)
+```
+
+### Verifica e riparazione mesh automatica
+
+```python
+import bpy, bmesh
+
+def check_and_fix_mesh(obj):
+    """Verifica mesh e tenta fix automatici comuni."""
+    bpy.context.view_layer.objects.active = obj
+    bpy.ops.object.mode_set(mode='EDIT')
+
+    me = obj.data
+    bm = bmesh.from_edit_mesh(me)
+
+    # 1. Rimuovi duplicati
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
+
+    # 2. Riempi buchi
+    bmesh.ops.holes_fill(bm, edges=bm.edges)
+
+    # 3. Ricalcola normali verso l'esterno
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+
+    # 4. Triangola (sicuro per export)
+    bmesh.ops.triangulate(bm, faces=bm.faces)
+
+    bmesh.update_edit_mesh(me)
+    bpy.ops.object.mode_set(mode='OBJECT')
+
+    # Report edge non-manifold
+    bpy.ops.object.mode_set(mode='EDIT')
+    bpy.ops.mesh.select_all(action='DESELECT')
+    bpy.ops.mesh.select_non_manifold()
+    bm = bmesh.from_edit_mesh(obj.data)
+    non_manifold = [e for e in bm.edges if e.select]
+    bpy.ops.object.mode_set(mode='OBJECT')
+
+    return {
+        "non_manifold_edges": len(non_manifold),
+        "printable": len(non_manifold) == 0
+    }
+```
+
+### Workflow completo: Modello → Stampa
+
+```
+1. Modella in Blender (unità mm dall'inizio)
+2. Applica tutti i modificatori (Apply before export)
+3. Verifica mesh: 3D Print Toolbox → Check All
+4. Fix problemi: Remove Doubles, Fill Holes, Recalc Normals
+5. Scala finale: verifica dimensioni in mm con N panel
+6. Export STL binario (Apply Transforms = ON)
+7. Import nel slicer → verifica anteprima layer
+8. Genera G-code → stampa
+```
+
+### Parametri slicer comuni da comunicare a Claude
+
+Quando chiedi aiuto su geometria per la stampa, specifica sempre:
+- **Stampante**: FDM (es. Prusa MK4, Bambu) o Resin (es. Elegoo)
+- **Materiale**: PLA / PETG / ABS / Resin
+- **Ugello/layer**: tipicamente 0.4mm nozzle, 0.2mm layer height
+- **Funzione del pezzo**: strutturale? decorativo? con incastri?
+- **Tolleranza incastri**: tipicamente +0.2mm per FDM per accoppiamenti
+
+### Script rapidi utili via blender-mcp
+
+```python
+# Dimensioni oggetto attivo in mm (assumendo scene in mm)
+obj = bpy.context.active_object
+dims = obj.dimensions
+print(f"X: {dims.x:.2f}mm  Y: {dims.y:.2f}mm  Z: {dims.z:.2f}mm")
+
+# Conta triangoli (importante per slicer)
+import bpy, bmesh
+me = bpy.context.active_object.data
+bm = bmesh.new()
+bm.from_mesh(me)
+bmesh.ops.triangulate(bm, faces=bm.faces)
+print(f"Triangoli: {len(bm.faces)}")
+bm.free()
+
+# Verifica se mesh è manifold
+import bpy, bmesh
+bm = bmesh.new()
+bm.from_mesh(bpy.context.active_object.data)
+non_manifold = [e for e in bm.edges if not e.is_manifold]
+print(f"Edge non-manifold: {len(non_manifold)} → {'STAMPABILE' if not non_manifold else 'DA CORREGGERE'}")
+bm.free()
+```
+
+### Miglioramenti consigliati al blender-mcp (roadmap)
+
+1. **MCP Resource `3d_print_checklist`**: knowledge base statica sempre disponibile a Claude
+2. **Tool `check_printability`**: analisi mesh strutturata con report JSON (manifold, scale, wall thickness, volume)
+3. **Tool `export_for_printing`**: STL export con tutti i fix applicati automaticamente
+4. **MCP Prompt `prepare_for_print`**: template che guida Claude nel workflow completo
+5. **Tool `estimate_material`**: calcola volume → peso → costo materiale stimato
