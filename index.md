@@ -21,6 +21,7 @@ A topic-first knowledge base for studying Claude, agent systems, MCP, prompting,
 - [API & Tools](Topics/API-Tools/index.md) - Claude API, caching, tool use, evals, SDKs, and skills
 - [Agents & MCP](Topics/Agents-MCP/index.md) - agent patterns, MCP internals, Cowork, and retrieval
 - [Claude Code](Topics/Claude%20Code/index.md) - setup, architecture, context handling, and integrations
+- [Decision Frameworks](Topics/Decision-Frameworks/index.md) - routing operativo per LLM advisory: lookup task->solution, anti-patterns, quick reference
 - [Ethics & Safety](Topics/Ethics-Safety/index.md) - alignment, bias, responsible use, and security
 
 ## Explore by Course

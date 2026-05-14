@@ -2,7 +2,7 @@
 
 Questa cartella raccoglie i topic specifici del prodotto Claude Code: setup, architettura, contesto, Skills e integrazioni.
 
-## Contenuti
+## Contenuti Base
 
 - [Architettura di Claude Code](Architettura%20di%20Claude%20Code.md)
 - [Setup e installazione di Claude Code](Setup%20e%20installazione%20di%20Claude%20Code.md)
@@ -10,3 +10,8 @@ Questa cartella raccoglie i topic specifici del prodotto Claude Code: setup, arc
 - [Multi-tool use e flussi complessi](Multi-tool%20use%20e%20flussi%20complessi.md)
 - [Integrazione MCP + GitHub](Integrazione%20MCP%20%2B%20GitHub.md)
 - [Anatomia di una Skill - SKILL e frontmatter](Anatomia%20di%20una%20Skill%20-%20SKILL%20e%20frontmatter.md)
+
+## Configurazione Avanzata (2026)
+
+- [Claude-Code-Advanced.md](Claude-Code-Advanced.md) - Hooks, Custom Skills, settings.json, Sub-agents, CLAUDE.md/Memory, Headless mode, IDE integration
+- [01-skills-filesystem.md](01-skills-filesystem.md) - Skills in Claude Code: filesystem-based, live reload, scope hierarchy
