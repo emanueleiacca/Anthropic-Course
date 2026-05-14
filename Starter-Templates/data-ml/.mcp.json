@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "bigquery": {
+      "command": "uvx",
+      "args": ["mcp-server-bigquery", "--project", "<<TODO: gcp-project-id>>", "--read-only"],
+      "env": { "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}" }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "${workspaceFolder}"]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    }
+  }
+}

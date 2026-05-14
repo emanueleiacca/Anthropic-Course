@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "claude-opus-4-7",
+  "effortLevel": "high",
+  "defaultMode": "acceptEdits",
+  "env": {
+    "CI": "0",
+    "NODE_ENV": "development",
+    "NO_COLOR": "0"
+  },
+  "permissions": {
+    "allow": [
+      "Read", "Glob", "Grep", "Edit", "Write",
+      "Bash(pnpm install)",
+      "Bash(pnpm build)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(pnpm typecheck)",
+      "Bash(pnpm docs)",
+      "Bash(pnpm changeset)",
+      "Bash(pnpm exec:*)",
+      "Bash(uv run:*)",
+      "Bash(cargo build)",
+      "Bash(cargo test:*)",
+      "Bash(cargo clippy:*)",
+      "Bash(cargo doc:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout -b *)",
+      "Bash(gh pr *)",
+      "Bash(gh release view:*)"
+    ],
+    "ask": [
+      "Bash(pnpm add *)",
+      "Bash(pnpm remove *)",
+      "Bash(pnpm release*)",
+      "Bash(npm publish*)",
+      "Bash(cargo publish*)",
+      "Bash(uv publish*)",
+      "Bash(git push:*)",
+      "Bash(git tag *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(npm publish --force*)",
+      "Read(./.env*)",
+      "Read(**/.npmrc)",
+      "Read(**/.pypirc)"
+    ]
+  },
+  "enabledMcpjsonServers": ["github", "filesystem", "npm-registry"]
+}

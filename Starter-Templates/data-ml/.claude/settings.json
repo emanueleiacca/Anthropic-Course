@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "claude-opus-4-7",
+  "effortLevel": "high",
+  "defaultMode": "default",
+  "env": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "MPLBACKEND": "Agg",
+    "JUPYTER_PLATFORM_DIRS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Read", "Glob", "Grep", "Edit", "Write", "NotebookEdit",
+      "Bash(uv sync)",
+      "Bash(uv add:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv run ruff:*)",
+      "Bash(uv run mypy:*)",
+      "Bash(uv run jupytext:*)",
+      "Bash(uv run python:*)",
+      "Bash(uv run jupyter nbconvert:*)",
+      "Bash(make:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "ask": [
+      "Bash(uv run jupyter lab)",
+      "Bash(git push:*)",
+      "Bash(bq query:*)",
+      "Bash(snowsql:*)",
+      "Write(./data/raw/**)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force*)",
+      "Read(./.env)",
+      "Read(./credentials*.json)",
+      "Read(**/service-account*.json)",
+      "Write(./data/raw/**)"
+    ]
+  },
+  "enabledMcpjsonServers": ["bigquery", "filesystem", "memory"]
+}
