@@ -6,3 +6,4 @@ Questa area copre l'uso della Claude API e gli strumenti che la affiancano nei w
 
 - [Claude API](Claude%20API/index.md) - struttura delle richieste, streaming, batch, caching e tool use
 - [Agent Tooling](Agent%20Tooling/index.md) - evals, Skills via API e SDK per subagenti
+- [Skills](Skills/index.md) - ecosystem completo di Claude Skills, dalla panoramica all'architettura a 3 livelli, custom authoring, API e Claude Code
